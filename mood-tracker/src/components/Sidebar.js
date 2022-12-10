@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Sidebar() {
   return (
-    <aside className="w-64" aria-label="Sidebar">
+    <aside className="w-64 pr-8 " aria-label="Sidebar ">
       <div className="overflow-y-auto h-screen py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
         <ul className="space-y-2">
           <li>

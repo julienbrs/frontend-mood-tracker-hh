@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="118px" height="118px" viewBox="0 0 118 118" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>log-moods-button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-6.4%" y="-4.5%" width="112.7%" height="112.7%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="0" width="110" height="110" rx="54"></rect>
+        <filter x="-1.8%" y="-1.8%" width="103.6%" height="103.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="dashboard-widget-sm:-consecutive-days-logged-null-hover" transform="translate(-39.000000, -110.000000)">
+            <g id="log-moods-button" transform="translate(43.000000, 112.000000)">
+                <g id="Group-3-Copy">
+                    <g id="Group-2" filter="url(#filter-1)">
+                        <g id="Rectangle-4-Copy">
+                            <use fill-opacity="0.70482337" fill="#28858A" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        </g>
+                    </g>
+                    <g id="log-moods-white" transform="translate(25.000000, 7.000000)">
+                        <path d="M8.57436236,24.0101661 C8.57436236,22.3517866 9.91374761,21.0082146 11.5723583,21.0082146 L48.4276417,21.0082146 C50.083287,21.0082146 51.4256376,22.3541705 51.4256376,24.0101661 L51.4256376,77.1980486 C51.4256376,78.8564281 50.0862524,80.2 48.4276417,80.2 L11.5723583,80.2 C9.91671296,80.2 8.57436236,78.8540442 8.57436236,77.1980486 L8.57436236,24.0101661 Z M30,23.0082146 C26.3487519,23.0082146 23.4293716,19.7968963 23.4293716,15.8805233 C23.4293716,11.9641504 26.3487519,8.75283203 30,8.75283203 C33.6512481,8.75283203 36.5706284,11.9641504 36.5706284,15.8805233 C36.5706284,19.7968963 33.6512481,23.0082146 30,23.0082146 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="2"></path>
+                        <rect id="Rectangle-34-Copy" fill="#FFFFFF" fill-rule="evenodd" x="17.001867" y="22.0082146" width="25.9962661" height="8.17025506"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
