@@ -1,5 +1,11 @@
 {
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
     "create-react-app": "^5.0.1"
+  },
+  "dependencies": {
+    "moralis-v1": "^1.12.0",
+    "react-moralis": "^1.4.2",
+    "web3uikit": "^1.0.4"
   }
 }

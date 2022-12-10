@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import Mainsection from "./components/Mainsection.js";
 
-function App() {
+// https://emoodtracker.com/img/hero-img-emoods.png
+
+function MyApp({ Component, pageProps }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* Wrapper of Contents + SideBar */}
+      <div className="flex flex-row">
+        <Sidebar />
+        <Mainsection />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default MyApp;
