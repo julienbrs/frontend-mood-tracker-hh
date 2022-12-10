@@ -4,6 +4,7 @@ import { useMoralis, useWeb3Contract } from "react-moralis";
 import { useEffect, useState } from "react";
 import { useNotification } from "web3uikit";
 import { ethers } from "ethers";
+import "../console-browserify";
 
 export default function CardMoodForm() {
   const [mood, setYourMood] = useState("");
@@ -39,5 +40,5 @@ export default function CardMoodForm() {
     params: {},
   });
 
-  return <a className="block">HEY ITS MEEEE</a>;
+  return <a className="block"></a>;
 }

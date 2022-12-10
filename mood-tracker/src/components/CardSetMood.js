@@ -1,10 +1,71 @@
-import { useState } from "react";
-import CardMoodForm from "./CardMoodForm";
+import { useState, useEffect } from "react";
+import moodboardImage from "../assets/moodboard.svg";
+import { contractAddresses, abi } from "../constants";
+import { useMoralis, useWeb3Contract } from "react-moralis";
+import { useNotification } from "web3uikit";
+import { ethers } from "ethers";
 
 export default function CardSetMood() {
   const [mood, setYourMood] = useState("");
   const [inputMood, setInputMood] = useState("");
   const [displayForm, setDisplayForm] = useState(false);
+
+  const { Moralis, isWeb3Enabled, chainId: chainIdHex } = useMoralis();
+  const chainId = parseInt(chainIdHex);
+  const dispatch = useNotification();
+  const moodDiaryAddress =
+    chainId in contractAddresses ? contractAddresses[chainId][0] : null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setYourMood(e.target.value);
+  };
+  const {
+    runContractFunction: setMood,
+    data: enterTxResponse,
+    isLoading,
+    isFetching,
+  } = useWeb3Contract({
+    abi: abi,
+    contractAddress: moodDiaryAddress,
+    functionName: "setMood",
+    params: {},
+  });
+
+  /* View Functions */
+
+  const { runContractFunction: getMostRecentMood } = useWeb3Contract({
+    abi: abi,
+    contractAddress: moodDiaryAddress,
+    functionName: "getMostRecentMood",
+    params: {},
+  });
+
+  const handleNewNotification = () => {
+    dispatch({
+      type: "info",
+      message: "Transaction Complete!",
+      title: "Transaction Notification",
+      position: "topR",
+      icon: "bell",
+    });
+  };
+  const handleSuccess = async (tx) => {
+    try {
+      await tx.wait(1);
+      handleNewNotification(tx);
+    } catch (error) {}
+  };
+
+  async function updateUIValues() {
+    const mood = (await getMostRecentMood()).toString();
+  }
+
+  useEffect(() => {
+    if (isWeb3Enabled) {
+      updateUIValues();
+    }
+  }, [isWeb3Enabled]);
 
   return (
     <a className="block">
@@ -36,9 +97,14 @@ export default function CardSetMood() {
             </div>
           ) : (
             <form
-              onSubmit={(event) => {
+              onSubmit={async (event) => {
                 event.preventDefault();
                 setYourMood(inputMood);
+                await setMood({
+                  // onComplete:
+                  // onError:
+                  onSuccess: handleSuccess,
+                });
               }}
             >
               <div className="mb-6"></div>
